@@ -1,0 +1,7 @@
+Django
+gunicorn
+psycopg2-binary
+whitenoise
+django-environ
+Pillow               # ImageField
+django-extensions    # utilitários de dev

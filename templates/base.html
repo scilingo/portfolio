@@ -1,0 +1,13 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Carolina Scilingo | Engenheira Biomédica{% endblock %}</title>
+  <meta name="description"
+        content="{% block description %}Portfólio de Carolina Scilingo{% endblock %}" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ block.super }}" />
+  <meta property="og:image" content="{{ profile.photo_hero.url }}" />
+  <meta property="og:type" content="website" />
+  <!-- Canonical -->
+  <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+</head>
