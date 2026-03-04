@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section style="padding: 80px 8%; max-width: 900px; margin: 0 auto;">
+  <a href="{% url 'project-list' %}" style="color: #2d7a4f; font-size: 0.9rem;">← Voltar para projetos</a>
+
+  <h1 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; color: #1a4d2e; margin: 24px 0 16px;">{{ project.title }}</h1>
+
+  {% if project.image %}
+    <img src="{{ project.image.url }}" style="width:100%; border-radius:12px; margin-bottom:32px;" />
+  {% endif %}
+
+  <p style="font-size: 1rem; line-height: 1.8; color: #1c3a28;">{{ project.description }}</p>
+
+  <div style="margin-top: 32px; display: flex; gap: 16px;">
+    {% if project.repo_url %}
+      <a href="{{ project.repo_url }}" target="_blank" style="background:#1a4d2e; color:white; padding:10px 24px; border-radius:30px; text-decoration:none;">Ver repositório</a>
+    {% endif %}
+    {% if project.demo_url %}
+      <a href="{{ project.demo_url }}" target="_blank" style="background:#2d7a4f; color:white; padding:10px 24px; border-radius:30px; text-decoration:none;">Ver demo</a>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
