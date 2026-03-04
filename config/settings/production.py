@@ -2,7 +2,7 @@ from .base import *
 import environ
 
 env = environ.Env()
-environ.Env.read_env(BASE_DIR / '.env')
+# environ.Env.read_env(BASE_DIR / '.env')
 
 SECURE_HSTS_SECONDS = 31536000
 SECURE_SSL_REDIRECT = True
