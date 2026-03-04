@@ -1,24 +1,17 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<section style="padding: 80px 8%; background: #1a4d2e; min-height: 100vh;">
-  <h1 style="font-family: 'Playfair Display', serif; color: white; font-size: 3rem; margin-bottom: 40px;">Projetos</h1>
-  <div style="display: flex; flex-wrap: wrap; gap: 24px;">
-    {% for project in projects %}
-    <a href="{% url 'project-detail' project.slug %}" style="text-decoration:none; flex: 0 0 calc(33% - 16px);">
-      <div style="background: rgba(255,255,255,0.08); border-radius: 16px; overflow: hidden;">
-        {% if project.image %}
-          <img src="{{ project.image.url }}" style="width:100%; aspect-ratio:16/10; object-fit:cover;" />
-        {% endif %}
-        <div style="padding: 20px;">
-          <h3 style="color: white; margin-bottom: 8px;">{{ project.title }}</h3>
-          <p style="color: rgba(255,255,255,0.65); font-size: 0.85rem;">{{ project.description|truncatewords:20 }}</p>
-        </div>
-      </div>
-    </a>
-    {% empty %}
-      <p style="color: white;">Nenhum projeto cadastrado ainda.</p>
-    {% endfor %}
-  </div>
-</section>
-{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Carolina Scilingo | Engenheira Biomédica{% endblock %}</title>
+  <meta name="description" content="{% block description %}Portfólio de Carolina Scilingo{% endblock %}" />
+  <meta property="og:title" content="Carolina Scilingo | Engenheira Biomédica" />
+  <meta property="og:type" content="website" />
+  <link rel="canonical" href="{{ request.build_absolute_uri }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,6 +1,5 @@
 from .base import *
 import environ
-import cloudinary
 
 env = environ.Env()
 environ.Env.read_env(BASE_DIR / '.env')
